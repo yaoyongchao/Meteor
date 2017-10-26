@@ -1,0 +1,90 @@
+apply plugin: 'com.android.library'
+
+android {
+//    compileSdkVersion rootProject.ext.android.compileSdkVersion
+//    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+
+    //base
+    compile rootProject.ext.dependencies["appcompat-v7"]
+    compile rootProject.ext.dependencies["design"]
+    compile rootProject.ext.dependencies["recyclerview-v7"]
+//    compile rootProject.ext.dependencies["cardview-v7"]
+
+    //ui
+
+    //rx
+    compile rootProject.ext.dependencies["rxjava"]
+    compile rootProject.ext.dependencies["rxandroid"]
+
+    //RxLifecycle
+    compile rootProject.ext.dependencies["rxlifecycle"]
+    compile rootProject.ext.dependencies["rxlifecycle-components"]
+    compile rootProject.ext.dependencies["rxlifecycle-android"]
+    //rxlifecycle2
+//    compile 'com.trello.rxlifecycle2:rxlifecycle:2.0.1'
+//    // If you want to bind to Android-specific lifecycles
+//    compile 'com.trello.rxlifecycle2:rxlifecycle-android:2.0.1'
+//    // If you want pre-written Activities and Fragments you can subclass as providers
+//    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.0.1'
+
+    //network
+    compile rootProject.ext.dependencies["gson"]
+    compile rootProject.ext.dependencies["retrofit"]
+    compile rootProject.ext.dependencies["retrofit-converter-gson"]
+    compile rootProject.ext.dependencies["adapter-rxjava"]
+    compile rootProject.ext.dependencies["okhttp"]
+    compile rootProject.ext.dependencies["okhttp-logging-interceptor"]
+    compile rootProject.ext.dependencies["glide"]
+    compile rootProject.ext.dependencies["glide-okhttp3-integration"]
+
+    //inject
+    compile rootProject.ext.dependencies["dagger"]
+    annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
+    compile rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    provided rootProject.ext.dependencies["annotation"]
+
+    //Logger
+    compile rootProject.ext.dependencies["logger"]
+
+    //canary
+//    debugCompile rootProject.ext.dependencies["blockcanary-android"]
+//    releaseCompile rootProject.ext.dependencies["blockcanary-no-op"]
+//    debugCompile rootProject.ext.dependencies["leakcanary-android"]
+//    releaseCompile rootProject.ext.dependencies["leakcanary-android-no-op"]
+
+
+    //BaseRecyclerViewAdapterHelper 下拉刷新，加载更多，使用：http://www.jianshu.com/p/b343fcff51b0
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
+    compile 'com.android.support:recyclerview-v7:25.+'
+
+//    dailog框架：https://github.com/afollestad/material-dialogs
+//    compile 'com.afollestad.material-dialogs:commons:0.9.4.6'
+
+}

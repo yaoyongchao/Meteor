@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--
+        字体设计规范：
+        导航主标题字号：40-42px
+        大的正文字号32px,
+        副文是26px，小字20px
+        退出登录等大按钮：36px
+    -->
+    <!--title字号-->
+    <dimen name="txt_title_default">21sp</dimen>
+    <!--正文字号-->
+    <dimen name="txt_default">16sp</dimen>
+    <!--副文字号-->
+    <dimen name="txt_deputy">13sp</dimen>
+    <!--小字-->
+    <dimen name="txt_small">10sp</dimen>
+    <!--退出登录等大按钮-->
+    <dimen name="btn_larger">18sp</dimen>
+    <!--左右留白位16dp-->
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="title_marginright">14dp</dimen>
+
+    <!--Tab的分割线的高度-->
+    <dimen name="tab_div_height">1dp</dimen>
+    <!--Tab高度-->
+    <dimen name="tab_height">60dp</dimen>
+    <dimen name="tab_bottom">0dp</dimen>
+    <dimen name="tab_custom_img">35dp</dimen>
+
+
+</resources>
