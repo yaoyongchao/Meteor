@@ -30,5 +30,8 @@
     <dimen name="tab_bottom">0dp</dimen>
     <dimen name="tab_custom_img">35dp</dimen>
 
+    <!-- ClearSearch height-->
+    <dimen name="clearsearch_height">10dp</dimen>
+
 
 </resources>

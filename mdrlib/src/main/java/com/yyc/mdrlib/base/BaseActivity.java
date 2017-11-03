@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.orhanobut.logger.Logger;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
@@ -21,6 +22,8 @@ import com.yyc.mdrlib.injector.component.ApplicationComponent;
 import com.yyc.mdrlib.utils.ActivityManager;
 import com.yyc.mdrlib.utils.ActivityUtils;
 import com.yyc.mdrlib.utils.LoggerUtil;
+
+import org.w3c.dom.Text;
 
 import javax.inject.Inject;
 
@@ -45,6 +48,7 @@ implements BaseContract.BaseView{
     private OnClickRighttListener onClickRighttListener;
     private ImageButton imgBtnRight;
     private ImageButton imgBtnLeft;
+    private TextView tvTitle;
 
     @Inject
     public P mPresenter;
@@ -133,6 +137,7 @@ implements BaseContract.BaseView{
 
         imgBtnRight = (ImageButton) rootView.findViewById(R.id.imgbtn_title_right);
         imgBtnLeft = (ImageButton) rootView.findViewById(R.id.imgbtn_title_left);
+        tvTitle = (TextView) rootView.findViewById(R.id.toolbar_title);
 
         imgBtnLeft.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,6 +161,10 @@ implements BaseContract.BaseView{
 
     public void isShowToolbar(int visibility){
         toolbar.setVisibility(visibility);
+    }
+    public void setToolbarTitle(String str) {
+        if (null != tvTitle)
+            tvTitle.setText(str);
     }
 
     public Toolbar getToolBar() {

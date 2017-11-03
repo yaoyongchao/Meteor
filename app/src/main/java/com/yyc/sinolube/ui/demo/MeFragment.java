@@ -1,9 +1,9 @@
 package com.yyc.sinolube.ui.demo;
 
-import com.yyc.mdrlib.R;
 import com.yyc.mdrlib.base.BaseFragment;
 import com.yyc.mdrlib.comm.CommPresenter;
 import com.yyc.mdrlib.injector.component.ApplicationComponent;
+import com.yyc.sinolube.R;
 
 /**
  * @author: Page

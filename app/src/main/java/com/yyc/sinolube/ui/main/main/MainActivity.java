@@ -4,6 +4,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,7 +19,7 @@ import com.yyc.sinolube.ui.demo.MeFragment;
 
 import butterknife.BindView;
 
-public class MainActivity extends BaseActivity<CommPresenter> {
+public class MainActivity extends BaseActivity<CommPresenter> implements ViewPager.OnPageChangeListener {
     @BindView(R.id.viewpager)
     NoScrollViewPager viewpager;
     @BindView(R.id.tablayout)
@@ -50,11 +51,14 @@ public class MainActivity extends BaseActivity<CommPresenter> {
     protected void initView() {
 //        isShowToolbar(View.GONE);
         isShowLeftIcon(View.GONE);
+        setToolbarTitle("首页");
+
         setTabs(tablayout,this.getLayoutInflater(),TAB_TITLES,TAB_IMGS);
         adapter = new MyViewPagerAdapter(getSupportFragmentManager());
         viewpager.setAdapter(adapter);
         viewpager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tablayout));
         tablayout.setOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewpager));
+        viewpager.setOnPageChangeListener(this);
     }
 
     @Override
@@ -81,6 +85,21 @@ public class MainActivity extends BaseActivity<CommPresenter> {
         }
     }
 
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        setToolbarTitle("首页" + position);
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
+
     /**
      * @description: ViewPager 适配器
      */
@@ -98,5 +117,8 @@ public class MainActivity extends BaseActivity<CommPresenter> {
         public int getCount() {
             return COUNT;
         }
+
+
+
     }
 }

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+    android:gravity="top"
     >
 
     <TextView
@@ -12,5 +12,6 @@
         android:text="我"
         android:textSize="35sp"
         />
+
 
 </LinearLayout>
