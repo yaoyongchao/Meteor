@@ -2,6 +2,7 @@ package com.yyc.sinolube.inject.component;
 
 import com.yyc.mdrlib.injector.component.ApplicationComponent;
 import com.yyc.mdrlib.injector.scope.ActivityScope;
+import com.yyc.sinolube.ui.demo.MeFragment;
 import com.yyc.sinolube.ui.main.login.LoginActivity;
 import com.yyc.sinolube.ui.main.splash.SplashActivity;
 import com.yyc.sinolube.ui.main.splash.WelcomeActivity;
@@ -19,4 +20,5 @@ public interface CommActivityComponent {
     void inject(SplashActivity splashActivity);
     void inject(WelcomeActivity welcomeActivity);
     void inject(LoginActivity loginActivity);
+    void inject(MeFragment meFragment);
 }

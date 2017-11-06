@@ -55,9 +55,9 @@ dependencies {
     //    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     compile rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    compile project(':httplib')
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-    compile project(':httplib')
 }
 
 //apply plugin: 'com.android.application'
