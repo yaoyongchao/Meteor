@@ -4,11 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.yyc.mdrlib.base.BaseActivity;
+import com.yyc.mdrlib.base.BaseFragment;
 import com.yyc.mdrlib.injector.component.ApplicationComponent;
 import com.yyc.sinolube.R;
 
 
-public class OneActivity extends BaseActivity {
+public class OneFragment extends BaseFragment {
 
 
     @Override
@@ -30,4 +31,10 @@ public class OneActivity extends BaseActivity {
     protected void initData() {
 
     }
+
+    @Override
+    protected void lazyLoadData() {
+
+    }
+
 }

@@ -20,7 +20,7 @@
         <activity android:name=".ui.main.main.MainActivity" />
         <activity android:name=".ui.main.splash.WelcomeActivity" />
         <activity android:name=".ui.main.login.LoginActivity" />
-        <activity android:name=".ui.demo.one.OneActivity"></activity>
+        <activity android:name=".ui.demo.one.OneFragment"></activity>
     </application>
 
 </manifest>

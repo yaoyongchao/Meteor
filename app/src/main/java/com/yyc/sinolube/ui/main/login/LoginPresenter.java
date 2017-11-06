@@ -24,7 +24,7 @@ public class LoginPresenter extends BaseRxPresenter<LoginContract.View> implemen
 
     @Override
     public void login(EditText edtAccount, EditText edtPassword) {
-        LoggerUtil.i("欢迎登录");
+        LoggerUtil.i("欢迎登录" + api);
         mView.loginSuccess("ok");
     }
 }
